@@ -1,0 +1,22 @@
+{
+  "name": "PCCases",
+  "version": "0.0.0",
+  "description": "PCCases =======",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/NtuCsieB00QudraGeeks/PCCases.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NtuCsieB00QudraGeeks/PCCases/issues"
+  },
+  "homepage": "https://github.com/NtuCsieB00QudraGeeks/PCCases",
+  "dependencies": {
+    "domready": "^1.0.5"
+  }
+}

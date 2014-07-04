@@ -1,0 +1,92 @@
+body {
+	background-color: #f6f6f4;
+	margin: 0px;
+}
+.index_back2 {
+	background-image: url(images/index_08.jpg);
+	background-repeat: repeat-x;
+	background-position: left top;
+	background-color: #2571a3;
+}
+.indexmenubar_back {
+	background-image: url(images/index_07.jpg);
+	background-repeat: no-repeat;
+	background-position: right bottom;
+}
+.about_manu {
+
+	background-image: url(images/about_02.jpg);
+	background-repeat: repeat-x;
+	background-position: left bottom;
+}
+
+.copyright {
+	font-family: "Arial", "細明體", "新細明體";
+	font-size: 12px;
+	color: #FFF;
+	background-color: #133953;
+	text-align: center;
+	vertical-align: middle;
+}
+td {
+	font-family: "Arial", "細明體", "新細明體";
+	font-size: 13px;
+	color: #545454;
+}
+a:link.newslink  {
+	color: #FFF;
+	text-decoration: none;
+}
+a:visited.newslink {
+	color: #FFF;
+	text-decoration: none;
+}
+a:hover.newslink{
+	color: #0FF;
+	text-decoration: underline;
+}
+a:active.newslink{
+	color: #0FF;
+	text-decoration: underline;
+}
+.newstitle {
+	color: #FF0;
+}
+.newstext {
+	color: #FFF;
+}
+a:link.about_menuslect  {
+	font-family: "Arial", "細明體", "新細明體";
+	font-size: 16px;
+	font-weight: bolder;
+	color: #FFF;
+	text-decoration: none;
+}
+a:visited.about_menuslect {
+	font-family: "Arial", "細明體", "新細明體";
+	font-size: 16px;
+	font-weight: bolder;
+	color: #FFF;
+	text-decoration: none;
+}
+a:hover.about_menuslect{
+	font-family: "Arial", "細明體", "新細明體";
+	font-size: 16px;
+	font-weight: bolder;
+	color: #FF9000;
+	text-decoration: none;
+}
+a:active.about_menuslect{
+	font-family: "Arial", "細明體", "新細明體";
+	font-size: 16px;
+	font-weight: bolder;
+	color: #FF9000;
+	text-decoration: none;
+}
+.about_menuslect_c{
+	font-family: "Arial", "細明體", "新細明體";
+	font-size: 16px;
+	font-weight: bolder;
+	color: #FF9000;
+	text-decoration: none;
+}
