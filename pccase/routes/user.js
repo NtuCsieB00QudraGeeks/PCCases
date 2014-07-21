@@ -4,5 +4,9 @@
  */
 
 exports.list = function(req, res){
-  res.send("respond with a resource");
+  console.log("respond with a resource");
+};
+
+exports.test = function(req, res){
+  console.log("haha");
 };

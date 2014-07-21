@@ -91,6 +91,7 @@ Spry.is = new Spry.BrowserSniff();
 // preloadImage1 and preloadImage2 are images for the rollover state of a menu
 Spry.Widget.MenuBar = function(element, opts)
 {
+	//alert("fuck");
 	this.init(element, opts);
 };
 
