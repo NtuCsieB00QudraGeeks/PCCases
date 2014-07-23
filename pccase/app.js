@@ -31,7 +31,7 @@ if ('development' == app.get('env')) {
 app.get('/', routes.index);
 app.get('/api/sallery-list', routes.test);
 app.post('/api/sallery-info', routes.detail);
-app.get('/api/rollcall', routes.rollcall);
+app.post('/api/rollcall', routes.rollcall);
 
 
 

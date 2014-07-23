@@ -112,14 +112,17 @@ About</a>
                     </select>
                     <br>
                     Month:
-                    <select ng-model="orderProp">
-                      <option ng-repeat="data in monthlsit" value={{data}} >{{data}}</option>
+                    <!-- select(name='city', ng-model='booking.city', ng-options='city for city in cityList') -->
+                    <select ng-model="month" ng-options="month for month in monthlist">
+                      <option value="">{{month}}</option>
                     </select>
                     <br>
                     Date:
-                    <select ng-model="orderProp">
-                      <option value="date">Date</option>
+                    <select ng-model="date" ng-options="date for date in datelist">
+                      <option value="">{{date}}</option>
                     </select>
+
+                  </br><input type="button" ng-click="buildRollcall()" value="submit"></input></br>
                     
                   </div>
                   <!--
