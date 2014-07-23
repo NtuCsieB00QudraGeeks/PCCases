@@ -17,3 +17,10 @@ salleryControllers.controller('SalleryInfoCrl', ['$scope', '$http',
       		$scope.datas = data.result;
     	});
 	}])
+
+salleryControllers.controller('RollCallCtrl', ['$scope', '$http',
+	function($scope, $http){
+		$http.get('/api/rollcall').success(function(data) {
+      		$scope.datas = data.result;
+    	});
+	}])
