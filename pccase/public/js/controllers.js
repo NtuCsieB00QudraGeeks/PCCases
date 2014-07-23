@@ -23,7 +23,7 @@ salleryControllers.controller('RollCallCtrl', ['$scope', '$http',
 		$http.get('/api/rollcall').success(function(data) {
       		$scope.datas = data.result;
     	});
-    	$scope.monthlist = [ 
+    	/*$scope.monthlist = [ 
       			"1"
       			"2"
       			"3"
@@ -36,5 +36,5 @@ salleryControllers.controller('RollCallCtrl', ['$scope', '$http',
       			"10"
       			"11"
       			"12"
-      		];
+      		];*/
 	}])
