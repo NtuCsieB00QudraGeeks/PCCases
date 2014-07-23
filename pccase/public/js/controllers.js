@@ -22,22 +22,65 @@ salleryControllers.controller('SalleryInfoCrl', ['$scope', '$routeParams', '$htt
 
 salleryControllers.controller('RollCallCtrl', ['$scope', '$http',
 	function($scope, $http){
-		$http.get('/api/rollcall').success(function(data) {
-      		$scope.datas = data.result;
-    	});
-    	/*$scope.monthlist = [ 
-      			"1"
-      			"2"
-      			"3"
-      			"4"
-      			"5"
-      			"6"
-      			"7"
-      			"8"
-      			"9"
-      			"10"
-      			"11"
+		$scope.month = "1";
+		$scope.date = "1";
+		$scope.monthlist = [ 
+      			"1",
+      			"2",
+      			"3",
+      			"4",
+      			"5",
+      			"6",
+      			"7",
+      			"8",
+      			"9",
+      			"10",
+      			"11",
       			"12"
-      		];*/
+      	];
+      	$scope.datelist = [ 
+      			"1",
+      			"2",
+      			"3",
+      			"4",
+      			"5",
+      			"6",
+      			"7",
+      			"8",
+      			"9",
+      			"10",
+      			"11",
+      			"12",
+      			"13",
+      			"14",
+      			"15",
+      			"16",
+      			"17",
+      			"18",
+      			"19",
+      			"20",
+      			"21",
+      			"22",
+      			"23",
+      			"24",
+      			"25",
+      			"26",
+      			"27",
+      			"28",
+      			"29",
+      			"30",
+      			"31"
+      	];
+
+      	$scope.buildRollcall = function() {
+      		var item = {};
+      		item.month = $scope.month;
+      		item.date = $scope.date;
+      		alert(item.month);
+			// $http.post('/api/rollcall', item).success(function(data) {
+ 	 // 	     	$scope.datas = data.result;
+   //   		});
+		}
+    	
 	}])
 
