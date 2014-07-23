@@ -30,8 +30,10 @@ if ('development' == app.get('env')) {
 
 app.get('/', routes.index);
 app.get('/api/sallery-list', routes.test);
-app.get('/api/sallery-info', routes.detail);
+app.post('/api/sallery-info', routes.detail);
 app.get('/api/rollcall', routes.rollcall);
+
+
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
