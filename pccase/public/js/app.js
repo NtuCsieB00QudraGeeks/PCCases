@@ -63,6 +63,7 @@ var onePiece = angular.module('pccase', ['ngRoute', 'salleryControllers'], funct
         }).
         when('/rollcall', {
             templateUrl: 'views/rollcall.ejs',
+            controller: 'RollCallCtrl'
             // controller: ''
         }).
         otherwise({

@@ -87,7 +87,55 @@ About</a>
               <td>
 
                 <!--body container-->
-
+                <div class="row">
+                  <div class="col-md-3">
+                    Search: <input ng-model="query">
+                    </br>&nbsp;</br>
+                    <!--<select ng-model="orderProp">-->
+                      <!--<option value="classname">ClassName</option>-->
+                      <!--| orderBy: orderProp | filter:query">-->
+                      <!--<option ng-repeat="data in datas" value={{data.classname}}>{{data.classname}}</option>-->
+    
+                      
+                    <!--</select>-->
+                    <!--<ul class="sallery">-->
+                    ClassName:
+                    <select ng-model="orderProp">
+                      <option ng-repeat="data in datas" value={{data.classname}} >{{data.classname}}</option>
+                    </select>
+                    <!--</ul>-->
+                    
+                    <br>
+                    Teacher:
+                    <select ng-model="orderProp">
+                      <option ng-repeat="data in datas" value={{data.teacher}} >{{data.teacher}}</option>
+                    </select>
+                    <br>
+                    Month:
+                    <select ng-model="orderProp">
+                      <option ng-repeat="data in monthlsit" value={{data}} >{{data}}</option>
+                    </select>
+                    <br>
+                    Date:
+                    <select ng-model="orderProp">
+                      <option value="date">Date</option>
+                    </select>
+                    
+                  </div>
+                  <!--
+                  <div class="col-md-9">
+                    <ul class="sallery">
+                      <li ng-repeat="data in datas | orderBy: orderProp | filter:query">
+                      <a href="#/sallery/{{data.id}}">Date: {{data.date}}</a>
+                      <p>Name: {{data.name}}</p>
+                      <p>Sallery: {{data.sallery}}</p>
+                      <p>{{data.id}}</p>
+                      <hr>
+                      </li>
+                    </ul>
+                  </div>
+                  -->
+                </div>
                 
 
                 <!--body end-->
