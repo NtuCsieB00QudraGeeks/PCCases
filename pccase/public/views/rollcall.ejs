@@ -113,7 +113,7 @@ About</a>
                     <br>
                     Month:
                     <select ng-model="orderProp">
-                      <option value="date">Date</option>
+                      <option ng-repeat="data in monthlsit" value={{data}} >{{data}}</option>
                     </select>
                     <br>
                     Date:
