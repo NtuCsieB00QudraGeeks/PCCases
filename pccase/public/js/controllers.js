@@ -139,7 +139,7 @@ salleryControllers.controller('BuildRollCallCtrl', ['$scope', '$http', '$locatio
             });
 
             $scope.addStudent = function(id, student_name) {
-                  console.log(id + "~~~" + student_name);
+                  // console.log(id + "~~~" + student_name);
                   $scope.student[id] = student_name;
             };
 
@@ -193,11 +193,59 @@ salleryControllers.controller('BuildRollCallCtrl', ['$scope', '$http', '$locatio
     	
 	}]);
 
-salleryControllers.controller('BuildClassCtrl', ['$scope', '$http', '$route', 'routeParams',
+salleryControllers.controller('BuildClassCtrl', ['$scope', '$http', '$route', '$routeParams',
       function($scope, $http, $route, $routeParams){
             var myreq = {};
             myreq.rollcallid = $routeParams.rollcallId;
             $http.post('/api/rollcall-info', myreq).success(function(data) {
-                  $scope.datas = data.result;
+                  $scope.data = data.result;
+
+                  $scope.begindate = $scope.data.year + "-" + $scope.data.month + "-" + $scope.data.date;
+                  $scope.date = [];
+                  $scope.date[0] = $scope.begindate;
+                  $scope.attendance = [];
+                  $scope.studentlength = $scope.data.student.length;
+                  for(var i = 1; i < parseInt($scope.data.section); i++){
+                        $scope.date[i] = moment($scope.date[i - 1]).add('days', 7).format('YYYY-MM-DD');
+                  }
+                  $scope.day = moment($scope.begindate).format('ddd');
+
+                  var i = 0;
+                  $scope.attendance[0] = ["yes", "yes", "no", "yes", "yes"];
+                  $scope.attendance[1] = ["no", "yes", "yes", "no", "yes"];
+                  $scope.attendance[2] = ["yes", "yes", "yes", "yes", "yes"];
+
+                  // loadAttendance(i);
             });
+
+            // var loadAttendance = function(classnum){
+            //       if(classnum < parseInt($scope.data.section)){
+            //             var myclass = {};
+            //             myclass.classid = $scope.date[classnum];
+            //             $http.post('/api/loadAttendance', myclass).success(function(data) {
+            //                   $scope.attendance[classnum] = data.result.attendance;
+            //                   classnum++;
+            //                   loadAttendance(classnum);
+            //             });
+            //       }
+            // };
+      }]);
+
+salleryControllers.controller('AttendanceCtrl', ['$scope', '$http', '$route', '$routeParams',
+      function($scope, $http, $route, $routeParams){
+            var myreq = {};
+            myreq.rollcallid = $routeParams.rollcallId;
+            $http.post('api/rollcall-info', myreq).success(function(item) {
+                  $scope.data = item.result;
+                  $scope.people = $scope.data.student.length;
+                  myreq.classid = $routeParams.classId;
+                  console.log(myreq.classid);
+                  $http.post('/api/loadAttendance', myreq).success(function(data) {
+                        $scope.attendance = data.result.attendance;
+                  });
+            });
+
+            $scope.saveRollcall = function() {
+                  console.log($scope.attendance);
+            };
       }]);

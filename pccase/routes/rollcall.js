@@ -140,7 +140,14 @@ exports.detail = function(req, res){
     var stream = collection.find(doc).stream();
     stream.on("data", function(item) {
       if(req.body.rollcallid == item.id){
-        
+        result.teacher = item.teacher;
+        result.year = item.year;
+        result.month = item.month;
+        result.date = item.date;
+        result.class = item.class;
+        result.section = item.section;
+        result.student = item.student;
+        result.id = item.id;
       }
     });
     stream.on("end", function() {

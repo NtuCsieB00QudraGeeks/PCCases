@@ -1,6 +1,6 @@
 'use strict';
 
-var app = angular.module('pccase', ['ngRoute', 'ngAnimate', 'salleryControllers'], function($routeProvider){
+var app = angular.module('pccase', ['ngRoute', 'ngAnimate', 'angularMoment', 'salleryControllers'], function($routeProvider){
     $routeProvider.
         when('/', {
         	templateUrl: 'views/index.ejs', 
@@ -72,6 +72,10 @@ var app = angular.module('pccase', ['ngRoute', 'ngAnimate', 'salleryControllers'
         when('/rollcall/:rollcallId', {
             templateUrl: 'views/rollcall_info.ejs',
             controller: 'BuildClassCtrl'
+        }).
+        when('/rollcall/:rollcallId/:classId', {
+            templateUrl: 'views/oneclass_info.ejs',
+            controller: 'AttendanceCtrl'
         }).
         otherwise({
         	redirectTo: '/'
