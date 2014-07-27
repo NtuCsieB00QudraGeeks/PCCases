@@ -87,30 +87,19 @@ About</a>
               <td>
 
                 <!--body container-->
-                <div class="row">
-                  <div class="col-md-4">
-                    Search: <input ng-model="query">
-                    </br>&nbsp;</br>
-                    <hr>
-                    Create a new rollcall?</br>
-                    <input type="button" ng-click="href=create('/rollcall/create')" value="Create!">
-
-                    
-                  </div>
-
-                  <div class="col-md-8">
-                    <ul class="sallery">
-                      <li ng-repeat="data in datas | orderBy: orderProp | filter:query">
-                      <a href="#/rollcall/{{data.id}}">{{data.teacher}} : {{data.class}}</a>
-                      </br>&nbsp;</br>
-                      <p>Begin Date: {{data.date}}</p>
-                      <p>Section: {{data.section}}</p>
-                      <hr>
-                      </li>
-                    </ul>
-                  </div>
-                  
-                </div>
+                
+                <table border="1">
+                <tr ng-repeat="">
+                  <td>Jill</td>
+                  <td>Smith</td> 
+                  <td>50</td>
+                </tr>
+                <tr>
+                  <td>Eve</td>
+                  <td>Jackson</td> 
+                  <td>94</td>
+                </tr>
+                </table>
                 
 
                 <!--body end-->

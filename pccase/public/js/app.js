@@ -1,6 +1,6 @@
 'use strict';
 
-var onePiece = angular.module('pccase', ['ngRoute', 'salleryControllers'], function($routeProvider){
+var app = angular.module('pccase', ['ngRoute', 'ngAnimate', 'salleryControllers'], function($routeProvider){
     $routeProvider.
         when('/', {
         	templateUrl: 'views/index.ejs', 
@@ -64,9 +64,20 @@ var onePiece = angular.module('pccase', ['ngRoute', 'salleryControllers'], funct
         when('/rollcall', {
             templateUrl: 'views/rollcall.ejs',
             controller: 'RollCallCtrl'
-            // controller: ''
+        }).
+        when('/rollcall/create', {
+            templateUrl: 'views/rollcall_build.ejs',
+            controller: 'BuildRollCallCtrl'
+        }).
+        when('/rollcall/:rollcallId', {
+            templateUrl: 'views/rollcall_info.ejs',
+            controller: 'BuildClassCtrl'
         }).
         otherwise({
         	redirectTo: '/'
         });
+});
+
+app.run(function($rootScope){
+  $rootScope._ = _;
 });

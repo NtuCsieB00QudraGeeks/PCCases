@@ -87,31 +87,71 @@ About</a>
               <td>
 
                 <!--body container-->
-                <div class="row">
-                  <div class="col-md-4">
-                    Search: <input ng-model="query">
-                    </br>&nbsp;</br>
+
+                <center>
+                    <h2>Let's create a new rollcall</h2>
+                    </br>
+                    <h4>1. Date and Time</h4>
+                    Year:
+                    <select ng-model="year" ng-options="year for year in yearlist">
+                      <option value="">{{year}}</option>
+                    </select>
+                    <br>
+                    <br>
+                    Month:
+                    <select ng-model="month" ng-options="month for month in monthlist">
+                      <option value="">{{month}}</option>
+                    </select>
+                    <br>
+                    <br>
+                    Date:
+                    <select ng-model="date" ng-options="date for date in datelist">
+                      <option value="">{{date}}</option>
+                    </select>
+                    <br>
+                    <br>
+                    <h4>2. Classname and teacher</h4>
+                    Choose a class?
+                    <select ng-model="class" ng-options="class for class in classlist" ng-click="newclass=''">
+                      <option value="">{{class}}</option>
+                    </select></br>
+                    <br>
+                    Or add a new class?
+                    <input type="text" placeholder="add a new class" ng-model="newclass" value=""></input>
+                    <br>
+                    <br>
+                    Choose a teacher?
+                    <select ng-model="teacher" ng-options="teacher for teacher in teacherlist" ng-click="newteacher=''">
+                      <option value="">{{teacher}}</option>
+                    </select></br>
+                    <br>
+                    Or add a new teacher?
+                    <input type="text" placeholder="add a new teacher" ng-model="newteacher" value=""></input>
+                    </br>
+                    </br>
+                    <h4>3. How many weeks?</h4>
+                    Section:
+                    <select ng-model="section" ng-options="section for section in sectionlist">
+                      <option value="">{{section}}</option>
+                    </select>
+                    </br>
+                    </br>
+                    <h4>4. Finally, Fill in student's name in class</h4>
+                    How many people in class?
+                    <select ng-model="people" ng-options="people for people in peoplelist">
+                      <option value="">{{people}}</option>
+                    </select>
+                    </br>
+                    </br>
+                    <div ng-repeat="student_id in _.range(people)" ng-model="people">
+                        {{student_id + 1}} . <input type="text" placeholder="add a student" ng-model="student" value="" ng-change="addStudent({{student_id}}, student)"></input>
+                    </div>
+                    </br>
                     <hr>
-                    Create a new rollcall?</br>
-                    <input type="button" ng-click="href=create('/rollcall/create')" value="Create!">
 
-                    
-                  </div>
 
-                  <div class="col-md-8">
-                    <ul class="sallery">
-                      <li ng-repeat="data in datas | orderBy: orderProp | filter:query">
-                      <a href="#/rollcall/{{data.id}}">{{data.teacher}} : {{data.class}}</a>
-                      </br>&nbsp;</br>
-                      <p>Begin Date: {{data.date}}</p>
-                      <p>Section: {{data.section}}</p>
-                      <hr>
-                      </li>
-                    </ul>
-                  </div>
-                  
-                </div>
-                
+                    </br></br><input type="button" ng-click="buildRollcall()" value="submit"></input></br>
+                </center>
 
                 <!--body end-->
 

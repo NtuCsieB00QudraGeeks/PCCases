@@ -11,6 +11,9 @@ var path = require('path');
 
 var app = express();
 
+var index = require('./routes/index');
+var rollcall = require('./routes/rollcall');
+
 // all environments
 app.set('port', process.env.PORT || 3000);
 app.set('views', path.join(__dirname, 'views'));
@@ -28,10 +31,14 @@ if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
 
-app.get('/', routes.index);
-app.get('/api/sallery-list', routes.test);
-app.post('/api/sallery-info', routes.detail);
-app.post('/api/rollcall', routes.rollcall);
+app.get('/', index.load);
+app.get('/api/sallery-list', index.test);
+app.post('/api/sallery-info', index.detail);
+app.post('/api/buildrollcall1', rollcall.buildrollcall1);
+app.post('/api/findClass', rollcall.findclass);
+app.post('/api/buildrollcall2', rollcall.buildrollcall2);
+app.post('/api/showrollcall', rollcall.showrollcall);
+app.post('/api/rollcall-info', rollcall.detail);
 
 
 
