@@ -87,24 +87,17 @@ About</a>
               <td>
 
                 <!--body container-->
-                {{date}}</br>
-                {{day}}</br>
-                {{data.student}}</br></br>
-                
-                <table border="1" width="300">
-                <tr>
-                  <td height="30">rollcall</td>
-                  <td ng-repeat="student in data.student" height="30">{{student}}</td>
-                </tr>
-                <tr ng-repeat="oneday in date" height="30">
-                  <td height="30">
-                    <a href="#/rollcall/{{data.id}}/{{oneday}}">{{oneday}}</a>
-                  </td>
-                  <td ng-repeat="num2 in _.range(studentlength)" height="30">
-                    {{attendance[_.indexOf(date, oneday)][num2]}}
-                  </td>
-                </tr>
-                </table>
+                    <h1>{{data.year}} - {{data.month}} - {{data.date}}</h1>
+                    <h3>rollcall</h3>
+                    <center>
+                      <div ng-repeat="student_id in _.range(people)" ng-model="people">
+                        {{data.student[student_id]}} :&nbsp;&nbsp;
+                        <input type="radio" ng-model="attendance[student_id]" value="yes">Yes&nbsp;&nbsp;
+                        <input type="radio" ng-model="attendance[student_id]" value="no">No</br></br>
+                      </div>
+                      <br>
+                      <input type="button" ng-click="saveRollcall()" value="Save!">
+                    </center>
                 
 
                 <!--body end-->
